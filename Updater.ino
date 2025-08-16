@@ -1,10 +1,10 @@
 // =================================================================
-// =      FINAL: PRODUCTION OTA UPDATER FOR ESP8266 (NodeMCU)      =
+// =    DEFINITIVE: PRODUCTION OTA UPDATER FOR ESP8266 (NodeMCU)   =
 // =================================================================
 // FEATURES:
-// - Correctly handles HTTPS and redirects for GitHub Releases.
+// - Handles HTTPS and ALL redirects for GitHub Releases (JSON & BIN).
 // - Non-blocking, resilient, and provides clear diagnostic output.
-// - Production-ready for deployment.
+// - Final version for deployment.
 // =================================================================
 
 #include <ESP8266WiFi.h>
@@ -17,21 +17,11 @@
 // ============== CONFIGURATION - YOU MUST FILL THIS OUT ==============
 // =================================================================
 
-// --- WiFi Credentials ---
 const char* ssid = "familynet2_2.4";
 const char* password = "CLB434F88C";
-
-// --- Firmware Version ---
-// This is the version of THIS binary. Increment for each new release.
-const char* FIRMWARE_VERSION = "2.0";
-
-// --- OTA Update Server ---
-// The final, permanent URL to your version.json file on GitHub.
-const char* UPDATE_JSON_URL = "https://github.com/zorawar-sizuka/nodemcuv3/releases/download/latest/version.json";
-
-// --- Update Check Interval ---
-// 1 hour = 3600000 ms. For testing, use a shorter interval like 5 minutes (300000 ms).
-const unsigned long UPDATE_CHECK_INTERVAL = 300000; // 1 hour
+const char* FIRMWARE_VERSION = "2.0"; // The version of THIS binary.
+const char* UPDATE_JSON_URL = "https://github.com/zorawar-sizuka/nodemcuv3/releases/download/latest/version.json"; // Your actual URL
+const unsigned long UPDATE_CHECK_INTERVAL = 3600000; // 1 hour
 
 // =================================================================
 
@@ -41,7 +31,6 @@ void checkForUpdates() {
   Serial.println("Checking for updates...");
 
   BearSSL::WiFiClientSecure client;
-  // Bypass certificate validation. Standard practice for ESP8266 OTA.
   client.setInsecure();
 
   HTTPClient http;
@@ -51,7 +40,6 @@ void checkForUpdates() {
     return;
   }
 
-  // CRITICAL FIX: Explicitly tell the client to follow GitHub's redirects.
   http.setFollowRedirects(HTTPC_STRICT_FOLLOW_REDIRECTS);
 
   int httpCode = http.GET();
@@ -85,7 +73,6 @@ void checkForUpdates() {
     
     Serial.println("Firmware URL: " + binaryUrl);
     
-    // Perform the update. The ESPhttpUpdate library handles the download, flash, and reboot.
     t_httpUpdate_return ret = ESPhttpUpdate.update(client, binaryUrl);
 
     switch (ret) {
@@ -96,7 +83,7 @@ void checkForUpdates() {
         Serial.println("HTTP_UPDATE_NO_UPDATES");
         break;
       case HTTP_UPDATE_OK:
-        Serial.println("HTTP_UPDATE_OK"); // Will not be seen, device reboots.
+        Serial.println("HTTP_UPDATE_OK");
         break;
     }
   } else {
@@ -120,16 +107,17 @@ void setup() {
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
   
-  // Check for updates once on boot-up.
+  // ==============================================================
+  // ============ THE FINAL, CRITICAL FIX FOR BINARY DOWNLOAD =====
+  // ==============================================================
+  // Configure the updater library to follow redirects globally.
+  ESPhttpUpdate.setFollowRedirects(HTTPC_STRICT_FOLLOW_REDIRECTS);
+  // ==============================================================
+  
   checkForUpdates();
 }
 
 void loop() {
-  // Your primary application logic goes here.
-  // This code will run continuously without being interrupted.
-
-
-  // Non-blocking periodic check for updates.
   unsigned long currentMillis = millis();
   if (currentMillis - previousMillis >= UPDATE_CHECK_INTERVAL) {
     previousMillis = currentMillis;
