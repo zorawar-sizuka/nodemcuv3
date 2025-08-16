@@ -23,7 +23,7 @@ const char* password = "CLB434F88C";
 
 // --- Firmware Version ---
 // This is the version of THIS binary. Increment for each new release.
-const char* FIRMWARE_VERSION = "1.0";
+const char* FIRMWARE_VERSION = "2.0";
 
 // --- OTA Update Server ---
 // The final, permanent URL to your version.json file on GitHub.
