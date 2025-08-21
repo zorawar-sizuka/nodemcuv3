@@ -24384,7 +24384,8 @@ END GROUP
                 0x000000003ffe8a50       0x48 /Users/sonualam/Library/Caches/arduino/sketches/1D10182277A048781CA58B559076C773/sketch/Updater.ino.cpp.o
                 0x000000003ffe8a50                _ZZN11ArduinoJson8V742PB226detail11FloatTraitsIdLj8EE25positiveBinaryPowersOfTenEvE7factors
  .rodata.str1.1
-                0x000000003ffe8a98       0xac /Users/sonualam/Library/Caches/arduino/sketches/1D10182277A048781CA58B559076C773/sketch/Updater.ino.cpp.o
+                0x000000003ffe8a98       0xab /Users/sonualam/Library/Caches/arduino/sketches/1D10182277A048781CA58B559076C773/sketch/Updater.ino.cpp.o
+ *fill*         0x000000003ffe8b43        0x1 
  .rodata._ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag
                 0x000000003ffe8b44        0x8 /Users/sonualam/Library/Caches/arduino/sketches/1D10182277A048781CA58B559076C773/libraries/ESP8266WiFi/ESP8266WiFi.a(ESP8266WiFiGeneric.cpp.o)
                 0x000000003ffe8b44                _ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag
@@ -24593,18 +24594,17 @@ END GROUP
  .rodata.str1.1
                 0x000000003ffe8edf        0x3 /Users/sonualam/Library/Arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/3.1.0-gcc10.3-e5f9fec/bin/../lib/gcc/xtensa-lx106-elf/10.3.0/../../../../xtensa-lx106-elf/lib/libc.a(lib_a-lnumeric.o)
  .rodata.str1.1
-                0x000000003ffe8edf        0x6 /Users/sonualam/Library/Arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/3.1.0-gcc10.3-e5f9fec/bin/../lib/gcc/xtensa-lx106-elf/10.3.0/../../../../xtensa-lx106-elf/lib/libc.a(lib_a-locale.o)
+                0x000000003ffe8edf        0x8 /Users/sonualam/Library/Arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/3.1.0-gcc10.3-e5f9fec/bin/../lib/gcc/xtensa-lx106-elf/10.3.0/../../../../xtensa-lx106-elf/lib/libc.a(lib_a-locale.o)
                                           0xb (size before relaxing)
  .rodata.str1.1
-                0x000000003ffe8ee5        0x8 /Users/sonualam/Library/Arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/3.1.0-gcc10.3-e5f9fec/bin/../lib/gcc/xtensa-lx106-elf/10.3.0/../../../../xtensa-lx106-elf/lib/libc.a(lib_a-mprec.o)
+                0x000000003ffe8ee7        0x8 /Users/sonualam/Library/Arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/3.1.0-gcc10.3-e5f9fec/bin/../lib/gcc/xtensa-lx106-elf/10.3.0/../../../../xtensa-lx106-elf/lib/libc.a(lib_a-mprec.o)
                                          0x30 (size before relaxing)
  .rodata.str1.1
-                0x000000003ffe8eed       0x11 /Users/sonualam/Library/Arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/3.1.0-gcc10.3-e5f9fec/bin/../lib/gcc/xtensa-lx106-elf/10.3.0/../../../../xtensa-lx106-elf/lib/libc.a(lib_a-nano-svfprintf.o)
+                0x000000003ffe8eef       0x11 /Users/sonualam/Library/Arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/3.1.0-gcc10.3-e5f9fec/bin/../lib/gcc/xtensa-lx106-elf/10.3.0/../../../../xtensa-lx106-elf/lib/libc.a(lib_a-nano-svfprintf.o)
  .rodata.str1.1
-                0x000000003ffe8efe       0x11 /Users/sonualam/Library/Arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/3.1.0-gcc10.3-e5f9fec/bin/../lib/gcc/xtensa-lx106-elf/10.3.0/../../../../xtensa-lx106-elf/lib/libc.a(lib_a-nano-vfprintf.o)
+                0x000000003ffe8f00       0x11 /Users/sonualam/Library/Arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/3.1.0-gcc10.3-e5f9fec/bin/../lib/gcc/xtensa-lx106-elf/10.3.0/../../../../xtensa-lx106-elf/lib/libc.a(lib_a-nano-vfprintf.o)
  .rodata._ZN18ESP8266WiFiAPClass16softAPmacAddressEv.str1.1
-                0x000000003ffe8efe       0x1e /Users/sonualam/Library/Caches/arduino/sketches/1D10182277A048781CA58B559076C773/libraries/ESP8266WiFi/ESP8266WiFi.a(ESP8266WiFiAP.cpp.o)
- *fill*         0x000000003ffe8efe        0x2 
+                0x000000003ffe8f00       0x1e /Users/sonualam/Library/Caches/arduino/sketches/1D10182277A048781CA58B559076C773/libraries/ESP8266WiFi/ESP8266WiFi.a(ESP8266WiFiAP.cpp.o)
  .rodata._ZN10DhcpServer11MagicCookieE
                 0x000000003ffe8f00        0x4 /Users/sonualam/Library/Caches/arduino/cores/e02c2ef7509fe7a3526624c66d78313f/core.a(LwipDhcpServer.cpp.o)
                 0x000000003ffe8f00                _ZN10DhcpServer11MagicCookieE
@@ -24616,7 +24616,7 @@ END GROUP
  *(.gnu.linkonce.e.*)
  *(.gnu.version_r)
  *(.eh_frame)
-                0x000000003ffe8f04                . = ALIGN (0x4)
+                0x000000003ffe8f20                . = ALIGN (0x4)
                 0x000000003ffe8f04                __XT_EXCEPTION_DESCS__ = ABSOLUTE (.)
  *(.xt_except_desc)
  *(.gnu.linkonce.h.*)

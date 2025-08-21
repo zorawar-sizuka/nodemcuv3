@@ -19,7 +19,7 @@
 
 const char* ssid = "AdvancedCollege";
 const char* password = "acem@123";
-const char* FIRMWARE_VERSION = "3.0"; // The version of THIS binary.
+const char* FIRMWARE_VERSION = "1.0"; // The version of THIS binary.
 const char* UPDATE_JSON_URL = "https://github.com/zorawar-sizuka/nodemcuv3/releases/download/latest/version.json"; // Your actual URL
 const unsigned long UPDATE_CHECK_INTERVAL = 3600000; // 1 hour
 
